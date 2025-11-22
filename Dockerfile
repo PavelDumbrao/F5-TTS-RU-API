@@ -26,9 +26,6 @@ RUN chmod +x /app/entrypoint.sh
 # Python deps
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
-# Ensure huggingface cache dir exists (models will be downloaded here)
-VOLUME ["/root/.cache/huggingface", "/data"]
-
 EXPOSE 4123
 
 CMD ["bash", "/app/entrypoint.sh"]
